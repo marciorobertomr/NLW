@@ -1,0 +1,163 @@
+* { /* Retira todas as margens, todos os espaços internos. O border box faz com que seja mantindos os espaços aplicados depois. 
+    É uma forma de reset da página */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url(./img/Fundo.jpg);
+    background-position: top center;
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-color: #121214;
+}
+
+body * {
+    font-family: 'Inter', sans-serif;
+    line-height: 160%;
+}
+/* Sugestão para visualização dos elementos. Cria uma borda vermelha em todos os elementos do main
+main * {   
+    border: 1px solid red;
+}
+*/
+
+header {
+    margin-top: 32px;
+    /*text-align: center; Alinha todo conteúdo identificado com propriedades de texto */
+    height: 120px; /* Define a altura da imagem */
+}
+
+header div {
+    width: 120px;
+    margin: auto;
+    background-image: linear-gradient(90deg, #9572FC 0%, #43E7AD 50.52%, #E2D45C 100%);
+    border-radius: 50%;
+    display: flex; /* Permite que o CSS ententa que todos os elementos da DIV receberão propriedades */
+    padding: 4px;
+    transition: transform .3s; /* Coloca duas propriedades. A primeira, vai puxar o transform e a segunda o tempo de duração. Obs: .3s significa 3 milisegundos*/
+}
+
+header div:hover { /* Os dois pontinhos siginificam que quando se passar o mouse por cima da div, ele vai aplicar o estilo definido */
+    transform: scale(1.1); /* Aumenta a escala */
+}
+
+header img {
+    width: 100%;
+    border-radius: 50%;
+}
+
+main {
+    max-width: 580px;
+    width: 90%;
+    margin: 32px auto;
+    /*
+    display: grid;
+    gap: 24px;
+    */
+    display: flex; /* Altera os elementos internos */
+    /* Outra opção seria utilizar o display: grid no logar do flex e do flex-direction */
+    gap: 24px; /* Aplica espaço entre os elementos */
+    flex-direction: column; /* Apresenta os elementos em coluna */
+}
+
+section {
+    color: white;
+    background-image: linear-gradient(90deg, #9572FC 0%, #43E7AD 50.52%, #E2D45C 100%);
+    padding-top: 4px;
+    border-radius: 10px;
+}
+
+section div {
+    background-color: #2A2634;
+    padding: 32px;
+    padding-top: 24px;
+    border-radius: 8px;
+}
+
+section h2 {
+    letter-spacing: -0.47px;
+}
+
+section p {
+    letter-spacing: -0.18px;
+    color: #A1A1AA;
+}
+
+section ul {
+    list-style: none;
+    display: flex; /* display tem a ver com a visualização das caixas. Atributo flex modifica as caixas dentro da caixa ul. Se aplicasse inline ou block, iria afetar a caixa ul, não as caixas li*/
+    gap: 16px; /* Aplica um espaço interno entre as caixas li. Só funciona pq foi aplicado o display flex. */
+    margin-top: 24px;
+    flex-wrap: wrap; /* Faz o ajuste dos itens internos da caixa ul, conforme o tamanho da caixa ul */
+}
+
+section ul li {
+    transition: transform .3s; /* Define o tempo de transição */
+}
+
+section ul li:hover {
+    transform: scale(1.1); /* Define a ação ao passar do mouse */
+}
+
+.games-list img {
+    width: 90px;
+    border-radius: 8px;
+}
+
+.channel-list img {
+    border-radius: 50%;
+    width: 70px;
+    border: 1px solid #443E54;
+}
+
+/* animation */
+/* Para fazer a animação, precisa de duas coisas: Definir a animação e informa o elemento que receberá a animação */
+
+header div {
+    animation: fromTop .8s .1s backwards; /* Informa a animação, aplica o tempo, aplica o delay e puxa as propriedades da animação, mantêm e já inicia com a animação */
+
+}
+
+
+@keyframes fromTop { /* Definição da animação. @keyframes serve para dar o início da animação */
+    from {
+        opacity: 0;
+        transform: translateY(-30px); /* posição de início da animação */
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0); /* Posição final. Move o item no eixo Y e termina na posição 0, ou seja, na posição original */
+    }
+}
+
+main section {
+    animation: fromBottom .8s backwards; /* Sempre que tiver um delay, é interessante aplicar o backwards */
+}
+
+main section:nth-child(1) { /* Identifica os filhos section de main e aplica as animações. nth-child(1) = (numeração)-(filho)(Um) */
+    animation-delay: .1s;
+}
+
+main section:nth-child(2) {
+    animation-delay: .4s;
+}
+
+main section:nth-child(3) {
+    animation-delay: 0.8s;
+}
+
+
+@keyframes fromBottom {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
