@@ -1,5 +1,4 @@
-* { /* Retira todas as margens, todos os espaços internos. O border box faz com que seja mantindos os espaços aplicados depois. 
-    É uma forma de reset da página */
+* { 
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -25,8 +24,7 @@ main * {
 
 header {
     margin-top: 32px;
-    /*text-align: center; Alinha todo conteúdo identificado com propriedades de texto */
-    height: 120px; /* Define a altura da imagem */
+    height: 120px;
 }
 
 header div {
@@ -34,13 +32,13 @@ header div {
     margin: auto;
     background-image: linear-gradient(90deg, #9572FC 0%, #43E7AD 50.52%, #E2D45C 100%);
     border-radius: 50%;
-    display: flex; /* Permite que o CSS ententa que todos os elementos da DIV receberão propriedades */
+    display: flex; /* Permite que o CSS entenda que todos os elementos da DIV receberão propriedades */
     padding: 4px;
     transition: transform .3s; /* Coloca duas propriedades. A primeira, vai puxar o transform e a segunda o tempo de duração. Obs: .3s significa 3 milisegundos*/
 }
 
-header div:hover { /* Os dois pontinhos siginificam que quando se passar o mouse por cima da div, ele vai aplicar o estilo definido */
-    transform: scale(1.1); /* Aumenta a escala */
+header div:hover { 
+    transform: scale(1.1);
 }
 
 header img {
@@ -52,10 +50,6 @@ main {
     max-width: 580px;
     width: 90%;
     margin: 32px auto;
-    /*
-    display: grid;
-    gap: 24px;
-    */
     display: flex; /* Altera os elementos internos */
     /* Outra opção seria utilizar o display: grid no logar do flex e do flex-direction */
     gap: 24px; /* Aplica espaço entre os elementos */
@@ -116,7 +110,7 @@ section ul li:hover {
 /* Para fazer a animação, precisa de duas coisas: Definir a animação e informa o elemento que receberá a animação */
 
 header div {
-    animation: fromTop .8s .1s backwards; /* Informa a animação, aplica o tempo, aplica o delay e puxa as propriedades da animação, mantêm e já inicia com a animação */
+    animation: fromTop .8s .3s backwards; /* Informa a animação, aplica o tempo, aplica o delay e puxa as propriedades da animação, mantêm e já inicia com a animação */
 
 }
 
